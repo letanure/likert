@@ -1,0 +1,31 @@
+/* =============================================================================
+   Creates vendor-prefixed CSS declaration blocks in one go
+ 
+   Example usage:
+   @include vendor(box-sizing, border-box);
+ 
+   Notes:
+   Majority of the usage will be a basic property (that needs to be prefixed)
+   followed by a corresponding value. 
+ 
+   But when the user specifies the `@viewport` declaration as a property then 
+   we need to branch off into a different scenario - Sass was bombing out with
+   compile errors when trying to make the mixin 100% dynamic so we have to 
+   hardcode `@viewport` (and prefixes).
+   ========================================================================== */
+ 
+@mixin columns($numberOfColumnsToSpan, $includePadding: true, $includeMargin: false)
+  $width: 100% / 10 * $numberOfColumnsToSpan
+  $fix-blackberry-os5-rounding-issue: 0.00100066
+  @if $width == 50%
+    $width: $width - $fix-blackberry-os5-rounding-issue
+  @if $includePadding
+    padding: 0 2%
+    width: $width
+  @if $includeMargin
+    margin: 0 2%
+    width: $width - 2%
+  @if ( $includePadding and $includeMargin )
+    margin: 0 1%
+    padding: 0 1%
+    width: $width - 2%

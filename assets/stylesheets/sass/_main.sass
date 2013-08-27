@@ -1,0 +1,285 @@
+*
+  box-sizing: border-box
+
+body
+  background-color: #fff
+  font-size: 100%
+  font-family: "Lato", sans-serif
+  height: 100%
+  position: relative
+  padding: 3em 0 0 0
+  background-color: $turquoise
+  overflow-x: hidden
+  overflow-y: scroll
+  transition: all .4s linear
+  &.white
+    background-color: #fff
+
+#header
+  +columns(10)
+  background-color: $midnightblue
+  background-color: #426CB6
+  background-image: url("../images/walmart.png")
+  background-repeat: no-repeat
+  background-position: 1em center
+  background-size: auto 1.8em
+  font-size: 1.5em
+  line-height: 2em
+  white-space: nowrap
+  color: #fff
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 2
+  padding-left: 8em
+  padding-top: .5em
+  // color: darken( #426CB6, 5% )
+  color: #babaca
+  span
+    font-size: .7em
+    // color: darken( #426CB6, 20% )
+    color: #F9BD42
+    &:before
+      content: "-"
+      color: #fff
+
+#main
+  +columns(10, false)
+  position: relative
+  z-index: 1
+  padding-bottom: 5em
+  overflow-y: hidden
+
+#login
+  
+  // <img src="assets/images/illustrations/clipboard.png">
+  width: 100%
+  height: 100%
+  form
+    background-color: $clouds
+    width: 33%
+    padding: 1em
+    margin: 5em auto
+    border-radius: .5em
+    position: relative
+    &:after
+      content: ""
+      position: absolute
+      top: 1em
+      left: -1em
+      border: .5em solid transparent
+      border-color: transparent $clouds transparent transparent
+    &:before
+      content: ""
+      background-image: url("../images/illustrations/clipboard.png")
+      background-size: 100%
+      width: 5em
+      height: 5em
+      position: absolute
+      top: 0
+      left: -6em
+    legend
+      display: none
+    label
+      display: block
+      span
+        display: none
+    input
+      font-size: 1.5em
+      line-height: 1em
+      height: 2em
+      padding: 0 .5em
+      border-radius: .2em
+      border: none
+      width: 100%
+      display: block
+    #error-name
+      font-size: .9em
+      line-height: 1em
+      padding: .2em 0
+      color: $pomegranate
+  button
+    border-radius: .2em
+    margin: .5em 0 0 0
+    border: none
+    padding: .5em 2em
+    line-height: 2em
+    font-size: 1em
+    color: #fff
+    background-color: $greensea
+
+.brand
+  color: $wetasphalt
+//   +columns(10)
+//   background-color: $peterriver
+        
+//   font-size: 2em
+//   line-height: 2em
+
+#questions-list
+  padding: 0 0 20em 0
+  position: relative
+
+.question-item
+  overflow: hidden 
+
+.header-theme
+  margin: 1em 1em 0 1em
+  border-radius: .5em
+  text-align: center
+  font-size: 2em
+  line-height: 1em
+  color: #fff
+  padding: 1em
+  background-color: $orange !important
+  position: relative
+  display: block
+  text-align: center
+
+.question
+  margin: 1em 1em 0 1em
+  border-radius: .5em
+  text-align: center
+  font-size: 2em
+  color: #fff
+  padding: 1em
+  background-color: $turquoise !important
+  position: relative
+  display: inline-block
+  text-align: left
+  min-width: 51%
+  // opacity: 0
+  &:before
+    content: ""
+    width: 0
+    height: 0
+    display: block
+    position: absolute
+    left: -1.6em
+    top: .5em
+    border: 1em solid transparent
+    border-color: transparent $turquoise transparent transparent
+  .cat
+    overflow: hidden
+    margin: 0 0 .4em 0
+    border: 1px solid $clouds
+    display: inline-block
+    +border-radius(.2em)
+    span
+      line-height: 2em
+      font-size: 0.4em
+      display: block
+      color: $clouds
+      margin: 0
+      padding: 0 .5em 0 1.4em
+      // border-radius: .2em
+      float: left
+      position: relative
+      &:first-child
+        padding-left: .5em
+      &:before
+        content: ""
+        display: block
+        position: absolute
+        right: -2em
+        top: 0
+        border: 1em solid $clouds
+        border-color: transparent transparent transparent $clouds
+      &:after
+        content: ""
+        display: block
+        position: absolute
+        right: -1.8em
+        top: 0
+        border: 1em solid $turquoise
+        border-color: transparent transparent transparent $turquoise
+
+
+
+
+
+.options
+  margin: 1em 1em 0 1em
+  border-radius: .5em
+  text-align: center
+  font-size: 2em
+  color: #fff
+  padding: 1em
+  background-color: $peterriver
+  position: relative
+  display: inline-block
+  float: right
+  text-align: left
+  opacity: 0
+  min-width: 51%
+  &:before
+    content: ""
+    width: 0
+    height: 0
+    display: block
+    position: absolute
+    right: -1.6em
+    top: .5em
+    border: 1em solid transparent
+    border-color: transparent transparent transparent $peterriver
+  form
+  ol
+    overflow: hidden
+    counter-reset: list
+    // height: 3em
+  li
+    // +columns(2, true, true)
+    list-style: none
+    // float: left
+    margin-bottom: 0.4em
+    display: block
+    height: 100%
+    &:last-child, &.hidden
+      margin-bottom: 0
+
+  label
+    border-radius: .2em
+    background-color: $belizehole
+    padding: .5em
+    cursor: pointer
+    display: block
+    white-space: nowrap
+    &:hover
+      background-color: $sunflower
+    &.selected
+      background-color: $wetasphalt
+    &:before
+      content: counter(list, decimal) "   "
+      border: .1em solid $peterriver
+      border-radius: 100%
+      text-align: center
+      display: inline-block
+      font-size: 1em
+      height: 1em
+      width: 1em
+      margin: 0 .5em 0 0
+      counter-increment: list
+      color: $peterriver
+    span
+    input
+      visibility: hidden
+
+#footer
+  display: none
+  +columns(10)
+  background-color: $midnightblue
+  font-size: 2em
+  line-height: 2em
+  color: $belizehole
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 100%
+        
+
+ 
+// .column1
+//   @include span(9, false)
+// .column2
+//   @include span(2)

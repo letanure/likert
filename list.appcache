@@ -1,0 +1,21 @@
+# 3
+
+CACHE:
+#assets/scripts/libraries/handlebars.js
+#assets/scripts/libraries/jquery-2.0.3.min.map
+#assets/scripts/libraries/jquery-storage.js
+#assets/scripts/libraries/jquery.js
+#assets/scripts/libraries/underscore-min.map
+#assets/scripts/libraries/underscore.js
+#assets/scripts/libraries/zepto.js
+#assets/scripts/libraries/require.js
+#assets/scripts/main.js
+#assets/scripts/brands.js
+#assets/scripts/questions.js
+#assets/stylesheets/style.css
+#assets/images/illustrations/clipboard.png
+#assets/images/walmart.png
+/index.html
+
+NETWORK:
+*

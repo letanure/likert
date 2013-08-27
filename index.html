@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br" Amanifest="app.cache" type="text/cache-manifest">
+	<head>
+		<meta charset="utf-8">
+		<title>Walmart.com</title>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link href="assets/stylesheets/style.css" rel="stylesheet">
+	
+		<link rel="apple-touch-icon" href="assets/images/illustrations/clipboard.png"/>
+
+		<!-- <link href="assets/flat-ui/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="assets/flat-ui/css/flat-ui.css" rel="stylesheet">
+		<link href="assets/flat-ui/images/favicon.ico" rel="shortcut icon" > -->
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+		<![endif]-->
+		<script data-main="assets/scripts/main" src="assets/scripts/libraries/require.js"></script>
+	</head>
+	<body>
+	
+	<div class="container">
+
+		<header id="header">
+			Planejamento comercial
+			<span>
+				Questionário de nível de marca				
+			</span>
+		</header>
+
+		<main id="main">
+
+			<div id="login">
+				<form action="/login" id="form-login">
+					<fieldset>
+						<legend>Login</legend>
+						<label>
+							<span>Nome</span>
+        			<input type="text" value="TESTE" placeholder="Digite seu nome" id="login-name" required Xpattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$">
+        			<b id="error-name"></b>
+						</label>
+					</fieldset>
+        	<button class="btn btn-primary btn-large btn-block" type="buttom">Entrar</button>
+				</form>
+      </div>
+
+			<form id="likert-form" action="">
+				<div id="question-list-container">
+					<ol id="questions-list"></ol>
+				</div>
+			</form>
+
+			<div id="header-theme" hidden>
+				<li class="header-theme">{{title}}</li>
+			</div>
+			
+			<div id="question-item" hidden>
+				<li id="question-{{questionId}}-{{brandId}}" class="question-item">
+					<div class="question">
+						<div class="cat">
+							<span>{{category}}</span>
+							<span>{{sub}}</span>
+						</div>
+						<div>
+							<span class="brand">{{brand}}</span>: 
+							{{question}}
+						</div>
+					</div>
+					<div class="options">
+							<ol>
+								<li><label><span>Concordo totalmente</span> 				<input class="answer" name="question[{{questionId}}][{{brandId}}]" data-question="{{questionId}}" data-brand="{{brandId}}" type="radio" value="5" name="opt"> </label></li>
+								<li><label><span>Concordo parcialmente  </span> 		<input class="answer" name="question[{{questionId}}][{{brandId}}]" data-question="{{questionId}}" data-brand="{{brandId}}" type="radio" value="4" name="opt"> </label></li>
+								<li><label><span>Não concordo nem discordo  </span> <input class="answer" name="question[{{questionId}}][{{brandId}}]" data-question="{{questionId}}" data-brand="{{brandId}}" type="radio" value="3" name="opt"> </label></li>
+								<li><label><span>Discordo Parcialmente  </span> 		<input class="answer" name="question[{{questionId}}][{{brandId}}]" data-question="{{questionId}}" data-brand="{{brandId}}" type="radio" value="2" name="opt"> </label></li>
+								<li><label><span>Discordo totalmente</span> 				<input class="answer" name="question[{{questionId}}][{{brandId}}]" data-question="{{questionId}}" data-brand="{{brandId}}" type="radio" value="1" name="opt"> </label></li>
+							</ol>					
+					</div>
+				</li>
+			</div>
+			
+
+			
+		
+		</main>
+
+		<footer id="footer">
+			<progress></progress>
+		</footer>
+
+	</div>
+</body>
+</html>
