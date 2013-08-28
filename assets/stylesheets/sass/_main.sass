@@ -277,9 +277,81 @@ body
   left: 0
   width: 100%
         
+#graph-area
+  margin: 4em 2em
+  #graph
+    li.graph-item
+      overflow: hidden
+      border-bottom: 1px solid #ccc
+      line-height: 2em
+      div.brand-name
+        float: left
+        width: 15%
+        padding: .5em 0
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+      div.brand-bar
+        float: left
+        width: 85%
+        position: relative
+        padding: .5em 0
+        &:before
+          content: ""
+          position: absolute
+          top: 0
+          left: 50%
+          border-left: 1px solid #ddd
+          width: 0
+          height: 4em
+          z-index: 1
+        div
+          // +border-radius(.3em)
+          height: 2em
+          float: left
+          text-align: center
+          min-width: .5%
+          position: relative
+          z-index: 2
+          color: transparent
+          &:hover
+          &.answer-5
+            +border-right-radius(.3em)
+            background-color: $nephritis
+          &.answer-4
+            background-color: $emerland
+          &.answer-3
+            background-color: $sunflower
+          &.answer-2
+            background-color: $orange
+          &.answer-1
+            background-color: $pomegranate
+            +border-left-radius(.3em)
 
- 
-// .column1
-//   @include span(9, false)
-// .column2
-//   @include span(2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

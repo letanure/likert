@@ -65,7 +65,25 @@ require(['jquery', 'jquery-storage', 'underscore', 'handlebars', 'brands', 'ques
         this.data.userName = $name.val();
         $error.empty();
         this.hideLogin();
+        this.storeUser($name.val());
       },
+
+      storeUser: function(name){
+        console.log(name)
+        var usersStore = $.Storage.loadItem('users');
+        var users = [];
+        if( !usersStore ){
+          console.log('nao existem usuarios')
+          users.push(name);
+          $.Storage.saveItem('users',users);
+        } else{
+          console.dir(  usersStore );
+          if( !_.contains(usersStore, name) ){
+            usersStore.push( name)
+            $.Storage.saveItem('users',usersStore);
+          }
+        }
+      }, 
 
       hideLogin: function () {
         var that = this;
@@ -81,10 +99,14 @@ require(['jquery', 'jquery-storage', 'underscore', 'handlebars', 'brands', 'ques
       data: {
         currentBrand : 0,
         currentQuestion: 0,
-        userName: 'foo'
+        userName: 'foo',
       }, 
 
       insertQuestion: function () {
+        if( questions[likert.data.currentQuestion] == undefined ){
+          console.log('FIM')
+          return;
+        }
         var data = {
           brandId     : likert.data.currentBrand,
           questionId  : likert.data.currentQuestion,
@@ -121,6 +143,8 @@ require(['jquery', 'jquery-storage', 'underscore', 'handlebars', 'brands', 'ques
         var brandId = $el.data('brand');
         var answer = $el.val();
         brands[brandId].answers[questionId] = answer;
+        console.log(answer)
+        $.Storage.saveItem( likert.data.userName , brands );
         if( $optionsList.find('.selected').size() ){
           $optionsList.find('.selected').removeClass('selected');
           $el.parent('label').addClass('selected')//.parent('li').siblings('li').slideUp('fast', function(){});
@@ -132,7 +156,6 @@ require(['jquery', 'jquery-storage', 'underscore', 'handlebars', 'brands', 'ques
           $el.parent('label').addClass('selected')//.parent('li').siblings('li').slideUp('fast', function(){});
           likert.nextQuestion()
         }
-        $.Storage.saveItem( likert.data.userName , brands  );
       },
 
       nextQuestion: function(){
@@ -143,8 +166,6 @@ require(['jquery', 'jquery-storage', 'underscore', 'handlebars', 'brands', 'ques
           likert.data.currentBrand++;
         }
         this.insertQuestion()
-
-
       },
 
       utils: {

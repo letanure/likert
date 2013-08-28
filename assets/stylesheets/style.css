@@ -418,3 +418,83 @@ body.white {
   left: 0;
   width: 100%;
 }
+
+/* line 280, sass/_main.sass */
+#graph-area {
+  margin: 4em 2em;
+}
+/* line 283, sass/_main.sass */
+#graph-area #graph li.graph-item {
+  overflow: hidden;
+  border-bottom: 1px solid #cccccc;
+  line-height: 2em;
+}
+/* line 287, sass/_main.sass */
+#graph-area #graph li.graph-item div.brand-name {
+  float: left;
+  width: 15%;
+  padding: 0.5em 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* line 294, sass/_main.sass */
+#graph-area #graph li.graph-item div.brand-bar {
+  float: left;
+  width: 85%;
+  position: relative;
+  padding: 0.5em 0;
+}
+/* line 299, sass/_main.sass */
+#graph-area #graph li.graph-item div.brand-bar:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 1px solid #dddddd;
+  width: 0;
+  height: 4em;
+  z-index: 1;
+}
+/* line 308, sass/_main.sass */
+#graph-area #graph li.graph-item div.brand-bar div {
+  height: 2em;
+  float: left;
+  text-align: center;
+  min-width: 0.5%;
+  position: relative;
+  z-index: 2;
+  color: transparent;
+}
+/* line 318, sass/_main.sass */
+#graph-area #graph li.graph-item div.brand-bar div.answer-5 {
+  -moz-border-radius-topright: 0.3em;
+  -webkit-border-top-right-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+  -moz-border-radius-bottomright: 0.3em;
+  -webkit-border-bottom-right-radius: 0.3em;
+  border-bottom-right-radius: 0.3em;
+  background-color: #27ae60;
+}
+/* line 321, sass/_main.sass */
+#graph-area #graph li.graph-item div.brand-bar div.answer-4 {
+  background-color: #2ecc71;
+}
+/* line 323, sass/_main.sass */
+#graph-area #graph li.graph-item div.brand-bar div.answer-3 {
+  background-color: #f1c40f;
+}
+/* line 325, sass/_main.sass */
+#graph-area #graph li.graph-item div.brand-bar div.answer-2 {
+  background-color: #f39c12;
+}
+/* line 327, sass/_main.sass */
+#graph-area #graph li.graph-item div.brand-bar div.answer-1 {
+  background-color: #c0392b;
+  -moz-border-radius-topleft: 0.3em;
+  -webkit-border-top-left-radius: 0.3em;
+  border-top-left-radius: 0.3em;
+  -moz-border-radius-bottomleft: 0.3em;
+  -webkit-border-bottom-left-radius: 0.3em;
+  border-bottom-left-radius: 0.3em;
+}

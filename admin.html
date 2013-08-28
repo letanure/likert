@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Walmart.com</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="assets/stylesheets/style.css" rel="stylesheet">
+  
+    <link rel="apple-touch-icon" href="assets/images/illustrations/clipboard.png"/>
+
+    <!-- <link href="assets/flat-ui/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/flat-ui/css/flat-ui.css" rel="stylesheet">
+    <link href="assets/flat-ui/images/favicon.ico" rel="shortcut icon" > -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <script data-main="assets/scripts/admin" src="assets/scripts/libraries/require.js"></script>
+  </head>
+  <body>
+  
+  <div class="container">
+
+    <header id="header">
+      Planejamento comercial
+      <span>
+        Questionário de nível de marca        
+      </span>
+    </header>
+
+    <main id="main">
+      
+      <div id="graph-area">
+        <ol id="graph"></ol>
+      </div>
+
+      <script id="graph-item" type="text/x-handlebars-template">
+        {{#each brands }}
+        <li class="graph-item" data-total="{{total}}">
+          <div class="brand-name">{{name}}</div>
+          <div class="brand-bar">
+            {{#each answers }}
+            <div class="answer-{{question}}" style="width:{{percent}}%">{{total}}</div>
+            {{/each}}
+          </div>
+        </li>
+        {{/each}}
+      </script>
+
+
+      
+    </main>
+
+    <footer id="footer">
+      <progress></progress>
+    </footer>
+
+  </div>
+</body>
+</html>
